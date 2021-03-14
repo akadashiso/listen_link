@@ -78,6 +78,8 @@ $(document).ready(function () {
                     $('.loading').addClass('d-none');
                     $('.input-form').addClass('d-none');
                     $('.results').removeClass('d-none');
+                    // ここでjQueryで隠れフィールで取得したデータをサブミット処理
+                    // albumコントローラーのへのしょり
                 },
                 error: function(data) {
                     $('.loading').addClass('d-none');
