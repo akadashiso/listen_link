@@ -78,12 +78,14 @@ $(document).ready(function () {
                     $('.loading').addClass('d-none');
                     $('.input-form').addClass('d-none');
                     $('.results').removeClass('d-none');
+                    $('.hidden-form').removeClass('d-none');
+                    $('.sample').addClass('d-none');
                     // ここでjQueryで隠れフィールで取得したデータをサブミット処理
                     // albumコントローラーのへの処理
                     const albumName = data.name;
-                    const itunesUrl = $('.itunes_url').val();
-                    const youtubeUrl = $('.youtube_url').val();
-                    const soundcloudUrl = $('.soundcloud_url').val();
+                    const itunesUrl = $("#input_itunes_url").val();
+                    const youtubeUrl = $("#input_youtube_url").val();
+                    const soundcloudUrl = $("#input_soundcloud_url").val();
 
                     $('.album_id').val(albumId);
                     $('.spotify_url').val(spotifyUrl);
