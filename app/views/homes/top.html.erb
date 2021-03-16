@@ -25,12 +25,19 @@
           </form>
         </div>
 
+        <%= form_with model: @album, url: albums_path, method: :post, local: true do |f| %>
         <div class="hidden-form">
-          <!--<= form_with model: , url:  do |form| %>-->
-
-          <!--< end %>-->
-
+          <%= f.hidden_field :album_id, class: 'album_id' %>
+          <%= f.hidden_field :spotify_url, class: 'spotify_url' %>
+          <%= f.hidden_field :album_name, class: 'album_name' %>
+          <%= f.hidden_field :artist_name, class: 'artist_name' %>
+          <%= f.hidden_field :image_url, class: 'image_url' %>
+          <%= f.hidden_field :itunes_url, class: 'itunes_url' %>
+          <%= f.hidden_field :youtube_url, class: 'youtube_url' %>
+          <%= f.hidden_field :soundcloud_url, class: 'soundcloud_url' %>
+          <%= f.submit "aaaa" %>
         </div>
+        <% end %>
 
         <!-- APIコール後のデータ結果 -->
         <div class="results d-none">

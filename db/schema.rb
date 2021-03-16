@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_141626) do
 
   create_table "albums", force: :cascade do |t|
     t.string "album_id", null: false
+    t.integer "user_id", null: false
     t.string "artist_name", null: false
     t.string "spotify_url", null: false
     t.string "album_name", null: false

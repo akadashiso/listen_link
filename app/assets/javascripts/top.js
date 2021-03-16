@@ -79,7 +79,22 @@ $(document).ready(function () {
                     $('.input-form').addClass('d-none');
                     $('.results').removeClass('d-none');
                     // ここでjQueryで隠れフィールで取得したデータをサブミット処理
-                    // albumコントローラーのへのしょり
+                    // albumコントローラーのへの処理
+                    const albumName = data.name;
+                    const itunesUrl = $('.itunes_url').val();
+                    const youtubeUrl = $('.youtube_url').val();
+                    const soundcloudUrl = $('.soundcloud_url').val();
+
+                    $('.album_id').val(albumId);
+                    $('.spotify_url').val(spotifyUrl);
+                    $('.album_name').val(albumName);
+                    $('.artist_name').val(artistString);
+                    $('.image_url').val(imageUrl);
+                    $('.itunes_url').val(itunesUrl);
+                    $('.youtube_url').val(youtubeUrl);
+                    $('.soundcloud_url').val(soundcloudUrl);
+                    //$('.hidden-submit').submit();
+
                 },
                 error: function(data) {
                     $('.loading').addClass('d-none');
