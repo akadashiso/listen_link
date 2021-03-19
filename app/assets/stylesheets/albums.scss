@@ -6,9 +6,9 @@ body, html {
   height: 100%;
 }
 
-#full-layer {
+#full-layer-image {
   /* The image used */
-  // background-image: url("https://i.scdn.co/image/ab67616d0000b2730aea86f1ca11554e3c189d86");
+  background-image: url("");
 
   /* Full height */
   height: 100%;
@@ -22,7 +22,7 @@ body, html {
   overflow: hidden;
 }
 
-#full-layer:before{
+#full-layer-image:before{
   content: '';
   background: inherit;
   -webkit-filter: blur(5px);

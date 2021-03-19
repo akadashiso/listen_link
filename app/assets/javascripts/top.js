@@ -13,9 +13,9 @@ $(document).ready(function () {
               method: "POST",
               url: "https://accounts.spotify.com/api/token",
               data: {
-                "grant_type":    "",
-                "client_secret": "",
-                "client_id":     "",
+                "grant_type":    "client_credentials",
+                "client_secret": "8d6af250ead841fab7a71875352c71ac",
+                "client_id":     "acd67738bc0543498675c110f2008df5",
               },
               success: function(result) {
                 accessToken = result.access_token;

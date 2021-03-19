@@ -1,60 +1,71 @@
 <div class="d-flex h-100 text-center text-white bg-dark">
 
-    <div class="cover-container w-100 h-100 p-3 mx-auto flex-column align-top">
-      <header class="mb-auto">
-        <div></div>
-      </header>
+  <div class="cover-container w-100 h-100 p-3 mx-auto flex-column align-top">
+    <header class="mb-auto">
+    </header>
 
-      <main class="px-3">
-        <!-- ユーザー入力フォーム -->
-        <div class="input-form">
-          <h1>Listen Link Japan</h1>
-          <p class="lead"> リリースする楽曲のURLを1つにまとめましょう。</p>
+    <main class="px-3">
+      <!-- ユーザー入力フォーム -->
+      <div class="input-form">
+        <h1>Listen Link</h1>
+        <p class="lead"> リリースする楽曲のURLを1つにまとめましょう。</p>
 
-          <!-- [エラーメッセージ] デフォルトで非表示。jQueryで表示される。-->
-          <div class="error alert alert-danger d-none" role="alert"></div>
+        <!-- [エラーメッセージ] デフォルトで非表示。jQueryで表示される。-->
+        <div class="error alert alert-danger d-none" role="alert"></div>
 
-          <!-- ローディングアニメーション -->
-          <div class="spinner-border text-light d-none" role="status">
-            <span class="sr-only">Loading...</span>
+        <!-- ローディングアニメーション -->
+        <div class="spinner-border text-light d-none" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      <% if user_signed_in? %>
+
+        <form class="mt-4">
+          <div class="row border p-2 border-secondary">
+          <img class="col-3 link-image" width="120" height="30" src="/assets/spotify.png" alt="">
+            <input type="text" id="albumUrl" class="col-9 form-control" placeholder="SpotifyのアルバムURLを入力してください。">
           </div>
-        <% if user_signed_in? %>
+          <div class="row border p-2 border-secondary">
+          <img class="col-3 link-image" width="120" height="30" src="/assets/apple_music.png" alt="">
+            <input type="text" id="input_itunes_url" class="col-9 form-control" placeholder="iTunes MusicのアルバムURLを入力してください。">
+          </div>
+          <div class="row border p-2 border-secondary">
+          <img class="col-3 link-image" width="120" height="30" src="/assets/youtube.png" alt="">
+            <input type="text" id="input_youtube_url" class="col-9 form-control" placeholder="YoutubeのアルバムURLを入力してください。">
+          </div>
+          <div class="row border p-2 border-secondary">
+          <img class="col-3 link-image" width="120" height="30" src="/assets/soundcloud.png" alt="">
+            <input type="text" id="input_soundcloud_url" class="col-9 form-control" placeholder="SoundcloudのアルバムURLを入力してください">
+          </div>
+          <button class="w-25 mt-3 btn btn-lg btn-success" id="submit" type="button">Create Link</button>
+        </form>
+      </div>
 
-          <form class="mt-4">
-            <input type="text" id="albumUrl" class="form-control" placeholder="SpotifyのアルバムURLを入力してください。">
-            <input type="text" id="input_itunes_url" class="sample form-control mt-2" placeholder="iTunes MusicのアルバムURLを入力してください。">
-            <input type="text" id="input_youtube_url" class="form-control" placeholder="YoutubeのアルバムURLを入力してください。">
-            <input type="text" id="input_soundcloud_url" class="form-control" placeholder="SoundcloudのアルバムURLを入力してください">
-            <button class="w-25 mt-3 btn btn-lg btn-success" id="submit" type="button">Create Link</button>
-          </form>
-        </div>
+      <%= form_with model: @album, url: albums_path, method: :post, local: true do |f| %>
+      <div class="hidden-form d-none">
+        <%= f.hidden_field :album_id, class: 'album_id' %>
+        <%= f.hidden_field :spotify_url, class: 'spotify_url' %>
+        <%= f.hidden_field :album_name, class: 'album_name' %>
+        <%= f.hidden_field :artist_name, class: 'artist_name' %>
+        <%= f.hidden_field :image_url, class: 'image_url' %>
+        <%= f.hidden_field :itunes_url, class: 'itunes_url' %>
+        <%= f.hidden_field :youtube_url, class: 'youtube_url' %>
+        <%= f.hidden_field :soundcloud_url, class: 'soundcloud_url' %>
+        <%= f.submit "URLを作成", class: 'w-25 mt-3 btn btn-lg btn btn-secondary' %>
+      </div>
+      <% end %>
+      <!-- APIコール後のデータ結果 -->
+      <div class="results d-none">
+        <div class="metadata"></div>
+        <iframe id="embed" class="mt-3" src="" width="300" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      </div>
+    </main>
+      <% else %>
+      <%= link_to "はじめる", new_user_registration_path, class: 'w-25 mt-3 btn btn-lg btn btn-secondary' %>
+      <%= link_to "ログイン", new_user_session_path, class: 'w-25 mt-3 ml-3 btn btn-lg btn btn-secondary' %>
+      <% end %>
 
-        <%= form_with model: @album, url: albums_path, method: :post, local: true do |f| %>
-        <div class="hidden-form d-none">
-          <%= f.hidden_field :album_id, class: 'album_id' %>
-          <%= f.hidden_field :spotify_url, class: 'spotify_url' %>
-          <%= f.hidden_field :album_name, class: 'album_name' %>
-          <%= f.hidden_field :artist_name, class: 'artist_name' %>
-          <%= f.hidden_field :image_url, class: 'image_url' %>
-          <%= f.hidden_field :itunes_url, class: 'itunes_url' %>
-          <%= f.hidden_field :youtube_url, class: 'youtube_url' %>
-          <%= f.hidden_field :soundcloud_url, class: 'soundcloud_url' %>
-          <%= f.submit "URLを作成", class: 'w-25 mt-3 btn btn-lg btn btn-secondary' %>
-        </div>
-        <% end %>
-        <!-- APIコール後のデータ結果 -->
-        <div class="results d-none">
-          <div class="metadata"></div>
-          <iframe id="embed" class="mt-3" src="" width="300" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        </div>
-      </main>
-        <% else %>
-        <%= link_to "はじめる", new_user_registration_path, class: 'w-25 mt-3 btn btn-lg btn btn-secondary' %>
-        <%= link_to "ログイン", new_user_session_path, class: 'w-25 mt-3 ml-3 btn btn-lg btn btn-secondary' %>
-        <% end %>
-
-      <footer class="mt-auto text-white-50">
-        <p>Copyright &copy; 2021 Shiso</p>
-      </footer>
-    </div>
+    <footer class="mt-auto text-white-50">
+      <p>Copyright &copy; 2021 Shiso</p>
+    </footer>
+  </div>
 </div>
