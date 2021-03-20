@@ -7,7 +7,7 @@
         <div class="col-md-4 offset-md-4">
           <div class="row justify-content-center">
               <div class="field">
-                <h2>新規ユーザー登録</h2>
+                <h3>新規ユーザー登録</h3>
               </div>
           </div>
         </div>
@@ -25,9 +25,9 @@
       <div class="row registration-email pt-2">
         <div class="col-md-4 offset-md-4">
           <div class="row justify-content-center">
-            <div class="field">
+            <div class="field row justify-content-center">
               <%= f.label :email, "メールアドレス" %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@example.com" %>
+              <%= f.email_field :email, size: 40, autofocus: true, autocomplete: "email", placeholder: "example@example.com" %>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> 文字以上)</em>
               <% end %><br />
-              <%= f.password_field :password, autocomplete: "new-password" %>
+              <%= f.password_field :password, autocomplete: "パスワード" %>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
           <div class="row justify-content-center">
             <div class="field">
               <%= f.label :password_confirmation, "パスワード(確認用)" %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+              <%= f.password_field :password_confirmation, autocomplete: "パスワード" %>
             </div>
           </div>
         </div>

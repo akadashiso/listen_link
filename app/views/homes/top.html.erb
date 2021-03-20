@@ -20,7 +20,7 @@
       <% if user_signed_in? %>
 
         <form class="mt-4">
-          <div class="row border p-2 border-secondary">
+          <div class="row border p-2 border-secondary rounded">
           <img class="col-3 link-image" width="120" height="30" src="/assets/spotify.png" alt="">
             <input type="text" id="albumUrl" class="col-9 form-control" placeholder="SpotifyのアルバムURLを入力してください。">
           </div>
@@ -36,7 +36,7 @@
           <img class="col-3 link-image" width="120" height="30" src="/assets/soundcloud.png" alt="">
             <input type="text" id="input_soundcloud_url" class="col-9 form-control" placeholder="SoundcloudのアルバムURLを入力してください">
           </div>
-          <button class="w-25 mt-3 btn btn-lg btn-success" id="submit" type="button">Create Link</button>
+          <button class="w-50 mt-3 btn btn-lg btn btn-secondary" id="submit" type="button">Create Link</button>
         </form>
       </div>
 
@@ -64,6 +64,7 @@
       <% else %>
       <%= link_to "はじめる", new_user_registration_path, class: 'w-25 mt-3 btn btn-lg btn btn-secondary' %>
       <%= link_to "ログイン", new_user_session_path, class: 'w-25 mt-3 ml-3 btn btn-lg btn btn-secondary' %>
+      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: 'w-80 mt-3 ml-3 btn btn-lg btn btn-secondary' %>
       <% end %>
 
     <footer class="mt-auto text-white-50">
