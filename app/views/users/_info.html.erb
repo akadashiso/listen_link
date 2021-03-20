@@ -1,0 +1,17 @@
+<table class="row profile-wrap">
+  <tr><%= attachment_image_tag user, :profile_image_id, format: 'jpeg', size: "100x100", fallback: "no_image.jpg" %></tr>
+  <tr>
+    <th>ユーザー名 : </th>
+    <td><%= user.name %></td>
+  </tr>
+  <tr>
+    <th>プロフィール</th>
+  </tr>
+  <tr>
+    <th><%= user.introduction %></th>
+  </tr>
+</table>
+
+<div class='row'>
+  <!--<= link_to '',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>-->
+</div>

@@ -13,6 +13,9 @@
 
   <body>
     <div class="text-white bg-dark border-bottom border-secondary">
+      <li>
+        <%= link_to "Home", root_path, class: 'w-25 btn btn-dark btn-lg' %>
+      </li>
       <% if user_signed_in? %>
         <li>
           <%= link_to "マイページ", my_page_path, class: 'w-25 btn btn-dark btn-lg' %>

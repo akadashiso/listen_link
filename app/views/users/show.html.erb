@@ -1,10 +1,12 @@
-<div class="conainer">
+<div class="conainer pt-3 bg-dark text-white">
   <div class="row mypage-wrap">
-    <div class="col col-md-3" style="border:1px solid #333">
-      
+    <div class="col col-sm-12 col-md-2 offset-md-1" style="border:1px solid #333">
+      <h2>アーティスト情報</h2>
+      <%= render 'info', user: @user %>
     </div>
-    <div class="col col-md-7" style="border:1px solid #333">
-
+    <div class="col col-sm-12 col-md-7 offset-md-1" style="border:1px solid #333">
+      <h2>リンク一覧</h2>
+      <%= render 'index', albums: @albums %>
     </div>
   </div>
 </div>
