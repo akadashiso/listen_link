@@ -19,17 +19,17 @@
  */
 
 
-/* Custom default button */
+/* カスタムデフォルトボタン */
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
   color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
+  text-shadow: none;
 }
 
 
 /*
- * Base structure
+ * ベース
  */
 
 body {
@@ -43,9 +43,8 @@ body {
 
 
 /*
- * Header
+ * ヘッダー
  */
-
 .nav-masthead .nav-link {
   padding: .25rem 0;
   font-weight: 700;
