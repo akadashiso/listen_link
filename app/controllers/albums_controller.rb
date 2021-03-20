@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
-    
+
     @album.user_id = current_user.id
     @album.save
     redirect_to @album

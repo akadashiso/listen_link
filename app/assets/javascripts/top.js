@@ -13,9 +13,9 @@ $(document).ready(function () {
               method: "POST",
               url: "https://accounts.spotify.com/api/token",
               data: {
-                "grant_type":    "client_credentials",
-                "client_secret": "8d6af250ead841fab7a71875352c71ac",
-                "client_id":     "acd67738bc0543498675c110f2008df5",
+                "grant_type":    "",
+                "client_secret": "",
+                "client_id":     "",
               },
               success: function(result) {
                 accessToken = result.access_token;
@@ -100,7 +100,7 @@ $(document).ready(function () {
                 },
                 error: function(data) {
                     $('.loading').addClass('d-none');
-                    $('.error').text('There was an error getting the album from Spotify. Please try a different album.');
+                    $('.error').text('Spotify側からのエラーのため、アルバム情報を取得出来ませんでした。恐れ入りますが、他のアルバムURLをお試しください。');
                     $('.error').removeClass('d-none');
                 }
             });

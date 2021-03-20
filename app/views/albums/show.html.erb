@@ -1,4 +1,7 @@
 <input type="hidden" id="bg-image" value="<%= @album.image_url %>">
+<input type="hidden" id="url-itunes" value="<%= @album.itunes_url %>">
+<input type="hidden" id="url-youtube" value="<%= @album.youtube_url %>">
+<input type="hidden" id="url-soundcloud" value="<%= @album.soundcloud_url %>">
 
   <div id="full-layer-image">
     <div class="container text-white">
@@ -28,10 +31,10 @@
       </div>
       <div class="row link-wrap">
         <div class="col-md-4 offset-md-4 bg-dark">
-          <div class="row link-options">
-          <!--<= link_to '<= @album.spotify_url %>' do %>-->
+          <div class="row spotify-link-options border-bottom border-secondary">
+            <%= link_to (@album.spotify_url), class: 'col' do %>
             <div class="col col-lg-12 col-sm-12 link-option-row">
-              <div class="row align-items-center border-bottom border-secondary">
+              <div class="row align-items-center">
                 <div class="col col-lg-9 col-sm-9 col-med-9 link-option-row-logo">
                    <img class="link-image" width="120" height="30" src="/assets/spotify.png" alt="">
                 </div>
@@ -40,23 +43,26 @@
                 </div>
               </div>
             </div>
-          <!--< end %>-->
+            <% end %>
           </div>
-          <div class="row link-options">
+          <div class="row itunes-link-options border-bottom border-secondary">
+            <%= link_to (@album.itunes_url), class: 'col' do %>
             <div class="col col-lg-12 col-sm-12 link-option-row">
-              <div class="row align-items-center border-bottom border-secondary">
+              <div class="row align-items-center">
                 <div class="col col-lg-9 col-sm-9 col-med-9 link-option-row-logo">
-                  <img class="link-image" width="120" height="0" src="/assets/apple_music.png" alt="">
+                  <img class="link-image" width="120" height="30" src="/assets/apple_music.png" alt="">
                 </div>
                 <div class="ccl col-lg-3 col-sm-3 col-med-3 link-option-row-play">
                   <p class="pt-2">Play</p>
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
-          <div class="row link-options">
+          <div class="row youtube-link-options border-bottom border-secondary">
+            <%= link_to (@album.youtube_url), class: 'col' do %>
             <div class="col col-lg-12 col-sm-12 link-option-row">
-              <div class="row align-items-center border-bottom border-secondary">
+              <div class="row align-items-center">
                 <div class="col col-lg-9 col-sm-9 col-med-9 link-option-row-logo">
                   <img class="link-image" width="120" height="30" src="/assets/youtube.png" alt="">
                 </div>
@@ -65,8 +71,10 @@
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
-          <div class="row link-options">
+          <div class="row soundcloud-link-options">
+            <%= link_to (@album.soundcloud_url), class: 'col' do %>
             <div class="col col-lg-12 col-sm-12 link-option-row">
               <div class="row align-items-center">
                 <div class="col col-lg-9 col-sm-9 col-med-9 link-option-row-logo">
@@ -77,6 +85,7 @@
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
         </div>
       </div>

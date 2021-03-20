@@ -50,7 +50,9 @@
         <%= f.hidden_field :itunes_url, class: 'itunes_url' %>
         <%= f.hidden_field :youtube_url, class: 'youtube_url' %>
         <%= f.hidden_field :soundcloud_url, class: 'soundcloud_url' %>
+        <h4>こちらでよろしいでしょうか？</h4>
         <%= f.submit "URLを作成", class: 'w-25 mt-3 btn btn-lg btn btn-secondary' %>
+        <%= link_to('やり直す', 'javascript:void(0);', onclick: "window.location.reload();", class: "w-25 mt-3 btn btn-lg btn btn-secondary")  %>
       </div>
       <% end %>
       <!-- APIコール後のデータ結果 -->
@@ -65,7 +67,7 @@
       <% end %>
 
     <footer class="mt-auto text-white-50">
-      <p>Copyright &copy; 2021 Shiso</p>
+      <p>Copyright &copy; 2021 Shinnosuke Akashi</p>
     </footer>
   </div>
 </div>
