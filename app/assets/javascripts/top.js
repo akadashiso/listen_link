@@ -1,4 +1,10 @@
 /* global $*/
+// function displayNone($element) {
+//     return $element.addClass('d-none')
+// }
+// function setSpotifyData() {
+    
+// }
 
 $(document).ready(function () {
     // ユーザーがサブミットボタンを押すと下記コード実行
@@ -12,10 +18,11 @@ $(document).ready(function () {
               async: false,
               method: "POST",
               url: "https://accounts.spotify.com/api/token",
+              // TODO: HTTP~~~
               data: {
-                "grant_type":    "",
-                "client_secret": "",
-                "client_id":     "",
+                "grant_type":    gon.grant_type,
+                "client_secret": gon.client_secret,
+                "client_id":     gon.client_id,
               },
               success: function(result) {
                 accessToken = result.access_token;
@@ -70,11 +77,14 @@ $(document).ready(function () {
                     $('.metadata').append("<h1>" + data.name + "</h1><h4>" + artistString + "</h4><img class='mt-2' width=300 height=300 src='" + imageUrl +  "' />");
 
                     // 埋込み型のSpotify音楽再生プレイヤー
-                    // APIは通らなずに実装可
+                    // APIは通らずに実装可
                     const url = 'https://open.spotify.com/embed/album/' + albumId;
                     $('#embed').attr('src', url);
 
                     // 投稿フォームを隠して結果を表示する
+                    // ['.loading', '.input-form'].forEach(e, i) {
+                       //  return displayNone($(e)) // ex: displayNone($('.loading'))
+                    // }
                     $('.loading').addClass('d-none');
                     $('.input-form').addClass('d-none');
                     $('.results').removeClass('d-none');
