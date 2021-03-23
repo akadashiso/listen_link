@@ -3,7 +3,7 @@
 //     return $element.addClass('d-none')
 // }
 // function setSpotifyData() {
-    
+
 // }
 
 $(document).ready(function () {

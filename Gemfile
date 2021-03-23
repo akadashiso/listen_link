@@ -85,3 +85,5 @@ group :production do
 end
 
 gem 'toastr-rails'
+
+gem 'clipboard-rails'

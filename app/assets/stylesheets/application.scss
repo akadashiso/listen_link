@@ -68,6 +68,11 @@ body {
   border-bottom-color: #fff;
 }
 
+
+#spotify_sample, #itunes_sample, #youtube_sample, #soundcloud_sample {
+  position:fixed;left:100vw
+}
+
   @import "bootstrap";
   @import 'font-awesome-sprockets';
   @import "font-awesome";
