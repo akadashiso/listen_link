@@ -1,10 +1,13 @@
+<!--<div class="conainer pt-3 bg-dark text-white bg-dark">-->
+<!--  <div class="d-flex row mypage-wrap">-->
+<!--    <div class="align-self-start col col-sm-12 col-md-2 offset-md-1 border border-secondary rounded">-->
+<!--      <h2>アーティスト情報</h2>-->
+<!--      <= render 'info', user: @user %>-->
+<!--    </div>-->
+<!--    <div class="col col-sm-12 col-md-7 offset-md-1 border border-secondary rounded" style="border:1px solid #333">-->
 <div class="conainer pt-3 bg-dark text-white bg-dark">
   <div class="d-flex row mypage-wrap">
-    <div class="align-self-start col col-sm-12 col-md-2 offset-md-1 border border-secondary rounded">
-      <h2>アーティスト情報</h2>
-      <%= render 'info', user: @user %>
-    </div>
-    <div class="col col-sm-12 col-md-7 offset-md-1 border border-secondary rounded" style="border:1px solid #333">
+    <div class="col-md-6 offset-md-3  border border-secondary rounded" style="border:1px solid #333">
       <h2 class="p-2">リンク一覧</h2>
       <%= render 'index', albums: @albums %>
     </div>
