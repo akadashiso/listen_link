@@ -20,7 +20,7 @@
       <% if user_signed_in? %>
         <form class="mt-4">
           <div class="row border p-2 border-secondary rounded">
-          <img class="col-3 link-image" width="120" height="30" src="/assets/spotify.png" alt="">
+          <img class="col-3 link-image" width="120" height="30" src="<%= asset_path "spotify.png" %>" alt="">
             <input type="text" id="albumUrl" class="col-7 form-control" placeholder="SpotifyのアルバムURLを入力してください。">
             <textarea id="spotify_sample" class="">https://open.spotify.com/album/7DIk8e5o3lUWJOHIPrzeAs?highlight=spotify:track:4uEvkDZ3AS4XRGFSW9LfxA</textarea>
             <button class="spotify-clipboard-btn btn-sm btn-secondary col-2" type="button" data-clipboard-action="copy" data-clipboard-target="#spotify_sample">
@@ -28,7 +28,7 @@
             </button>
           </div>
           <div class="row border p-2 border-secondary">
-          <img class="col-3 link-image" width="120" height="30" src="/assets/apple_music.png" alt="">
+          <img class="col-3 link-image" width="120" height="30" src="<%= asset_path "apple_music.png" %>" alt="">
             <input type="text" id="input_itunes_url" class="col-7 form-control" placeholder="Apple MusicのアルバムURLを入力してください。">
             <textarea id="itunes_sample" class="">https://music.apple.com/jp/album/get-the-strap/1503398799?i=1503398802</textarea>
             <button class="itunes-clipboard-btn btn-sm btn-secondary col-2" type="button" data-clipboard-action="copy" data-clipboard-target="#itunes_sample">
@@ -36,7 +36,7 @@
             </button>
           </div>
           <div class="row border p-2 border-secondary">
-          <img class="col-3 link-image" width="120" height="30" src="/assets/youtube.png" alt="">
+          <img class="col-3 link-image" width="120" height="30" src="<%= asset_path "youtube.png" %>" alt="">
             <input type="text" id="input_youtube_url" class="col-7 form-control" placeholder="YoutubeのアルバムURLを入力してください。">
             <textarea id="youtube_sample" class="">https://www.youtube.com/watch?v=sXuIfZzyLrM</textarea>
             <button class="youtube-clipboard-btn btn-sm btn-secondary col-2" type="button" data-clipboard-action="copy" data-clipboard-target="#youtube_sample">
@@ -44,7 +44,7 @@
             </button>
           </div>
           <div class="row border p-2 border-secondary">
-          <img class="col-3 link-image" width="120" height="30" src="/assets/soundcloud.png" alt="">
+          <img class="col-3 link-image" width="120" height="30" src="<%= asset_path "soundcloud.png" %>" alt="">
             <input type="text" id="input_soundcloud_url" class="col-7 form-control" placeholder="SoundcloudのアルバムURLを入力してください">
             <textarea id="soundcloud_sample" class="">https://soundcloud.com/groupchatrecordings/duckworthsound-x-shiso-get-the-strap-original-mix</textarea>
             <button class="soundcloud-clipboard-btn btn-sm btn-secondary col-2" type="button" data-clipboard-action="copy" data-clipboard-target="#soundcloud_sample">
