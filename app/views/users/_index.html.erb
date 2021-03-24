@@ -1,0 +1,18 @@
+<table class='table text-white'>
+  <thead>
+    <tr>
+      <th>アートワーク</th>
+      <th>曲名</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td><img class="link-image" width="50" height="50" src="<%= album.image_url %>" alt=""></td>
+        <td><%= album.album_name %></td>
+        <td><%= link_to 'Show', album_path(album), class: "text-white album_#{album.id}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

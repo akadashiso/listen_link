@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_102410) do
+ActiveRecord::Schema.define(version: 2021_03_14_141626) do
+
+  create_table "albums", force: :cascade do |t|
+    t.string "album_id", null: false
+    t.integer "user_id", null: false
+    t.string "artist_name", null: false
+    t.string "spotify_url", null: false
+    t.string "album_name", null: false
+    t.string "image_url", null: false
+    t.string "itunes_url"
+    t.string "youtube_url"
+    t.string "soundcloud_url"
+    t.string "bak_artist_name"
+    t.string "bak_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

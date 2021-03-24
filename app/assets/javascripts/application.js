@@ -16,5 +16,27 @@
 
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
+//= require toastr
+//= require clipboard
+
+/* global $*/
+
+// 各プラットフォームのサンプルURL
+
+$(document).ready(function(){
+
+var spotifyClipboard = new Clipboard('.spotify-clipboard-btn');
+console.log(spotifyClipboard);
+
+var itunesClipboard = new Clipboard('.itunes-clipboard-btn');
+console.log(itunesClipboard);
+
+var youtubeClipboard = new Clipboard('.youtube-clipboard-btn');
+console.log(youtubeClipboard);
+
+var soundcloudClipboard = new Clipboard('.soundcloud-clipboard-btn');
+console.log(soundcloudClipboard);
+});
