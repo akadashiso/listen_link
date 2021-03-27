@@ -18,7 +18,7 @@ $(document).ready(function () {
               async: false,
               method: "POST",
               url: "https://accounts.spotify.com/api/token",
-              // TODO: HTTP~~~
+              // TODO: ajaxでAPIを叩くとクライアントシークレットが表示されてしまうため、Rubyで叩く
               data: {
                 "grant_type":    gon.grant_type,
                 "client_secret": gon.client_secret,
