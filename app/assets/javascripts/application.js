@@ -28,15 +28,27 @@
 
 $(document).ready(function(){
 
-var spotifyClipboard = new Clipboard('.spotify-clipboard-btn');
-console.log(spotifyClipboard);
+  var spotifyClipboard = new Clipboard('.spotify-clipboard-btn');
+  console.log(spotifyClipboard);
+  $(".spotify-clipboard-btn").click(function (e) {
+    toastr.success('コピーしました。')
+  });
 
-var itunesClipboard = new Clipboard('.itunes-clipboard-btn');
-console.log(itunesClipboard);
+  var itunesClipboard = new Clipboard('.itunes-clipboard-btn');
+  console.log(itunesClipboard);
+  $(".itunes-clipboard-btn").click(function (e) {
+    toastr.success('コピーしました。')
+  });
 
-var youtubeClipboard = new Clipboard('.youtube-clipboard-btn');
-console.log(youtubeClipboard);
+  var youtubeClipboard = new Clipboard('.youtube-clipboard-btn');
+  console.log(youtubeClipboard);
+  $(".youtube-clipboard-btn").click(function (e) {
+    toastr.success('コピーしました。')
+  });
 
-var soundcloudClipboard = new Clipboard('.soundcloud-clipboard-btn');
-console.log(soundcloudClipboard);
+  var soundcloudClipboard = new Clipboard('.soundcloud-clipboard-btn');
+  console.log(soundcloudClipboard);
+  $(".soundcloud-clipboard-btn").click(function (e) {
+    toastr.success('コピーしました。')
+  });
 });
